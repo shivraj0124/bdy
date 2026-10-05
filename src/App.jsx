@@ -45,7 +45,7 @@ export default function App() {
           <Hero />
           <Memories />
           <Message />
-          <GiftBox />
+          {/* <GiftBox /> */}
           <Cake />
           <footer className="relative z-10 pb-16 pt-4 text-center font-display text-xl italic text-rose-300">
             Love You Tanvi ❤
