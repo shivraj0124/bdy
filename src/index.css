@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  @apply font-body text-blush antialiased;
+  background: radial-gradient(1200px 800px at 80% -10%, #6B1536 0%, transparent 60%),
+              radial-gradient(900px 700px at 0% 100%, #4A0E24 0%, transparent 55%), #1F0510;
+  background-attachment: fixed;
+}
+.glass {
+  background: rgba(255, 228, 234, 0.07);
+  border: 1px solid rgba(255, 228, 234, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(.8); opacity: 0; }
+  10% { opacity: .75; }
+  100% { transform: translateY(-115vh) scale(1.2) rotate(18deg); opacity: 0; }
+}
+@keyframes flicker {
+  0%, 100% { transform: scale(1, 1) rotate(-2deg); }
+  50% { transform: scale(.88, 1.12) rotate(2deg); }
+}
+.flame { transform-origin: center bottom; animation: flicker .35s infinite; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .heart-float, .flame { animation: none !important; }
+}
